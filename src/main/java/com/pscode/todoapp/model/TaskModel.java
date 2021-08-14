@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.Generated;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -24,8 +23,8 @@ public class TaskModel {
     @Column(name="todo_name")
     private String todoName;
 
-    @Column(name="todo_status")
-    private Boolean todoStatus;
+    @Column(name="completed")
+    private Boolean completed;
 
     @Column(name="created_at")
     private LocalDateTime createdAt = LocalDateTime.now();
