@@ -6,7 +6,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.Optional;
+
 import static org.mockito.Mockito.when;
 
 public class TodoServiceTest {
@@ -15,16 +16,16 @@ public class TodoServiceTest {
     private final TodoService todoService = new TodoService(todoRepository);
 
     @Test
-    public void shouldBeAbleToCreateAnewTodoTask(){
+    public void shouldBeAbleToCreateAnewTodoTask() {
         TaskModel model = new TaskModel();
         model.setTodoName("Send reminder email");
         model.setCompleted(false);
         model.setTodoId(1L);
 
         when(todoRepository.save(model)).thenReturn(model);
-        TaskModel result = todoService.createTodo(model);
+        Optional<TaskModel> result = todoService.createTodo(model);
 
-        Assertions.assertEquals("Send reminder email", result.getTodoName());
-        Assertions.assertEquals(false, result.getCompleted());
+        Assertions.assertEquals("Send reminder email", result.get().getTodoName());
+        Assertions.assertEquals(false, result.get().getCompleted());
     }
 }
