@@ -1,12 +1,11 @@
 package com.pscode.todoapp.service;
 
-import com.pscode.todoapp.repository.TodoRepository;
 import com.pscode.todoapp.model.TaskModel;
+import com.pscode.todoapp.repository.TodoRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
