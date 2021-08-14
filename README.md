@@ -10,3 +10,8 @@
 ```bash
 cd to application directory
 ./gradlw build
+```
+# Running the application locally
+```bash
+./gradlew bootRun --args='--spring.profiles.active=local'
+```
