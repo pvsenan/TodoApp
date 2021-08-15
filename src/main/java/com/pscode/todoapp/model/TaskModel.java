@@ -1,5 +1,6 @@
 package com.pscode.todoapp.model;
 
+import io.swagger.v3.oas.annotations.Hidden;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,6 +19,7 @@ public class TaskModel {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name="todo_id")
+    @Hidden
     private Long todoId;
 
     @Column(name="todo_name")
@@ -27,5 +29,6 @@ public class TaskModel {
     private Boolean completed;
 
     @Column(name="created_at")
+    @Hidden
     private LocalDateTime createdAt = LocalDateTime.now();
 }
