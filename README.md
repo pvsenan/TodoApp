@@ -15,3 +15,6 @@ cd to application directory
 ```bash
 ./gradlew bootRun --args='--spring.profiles.active=local'
 ```
+## OpenAPI(Swagger) documentation
+OpenAPI documentation when running locally:
+<http://localhost:5000/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config>
