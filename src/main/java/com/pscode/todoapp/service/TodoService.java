@@ -31,8 +31,7 @@ public class TodoService {
             model.setTodoName(updatedTodoTask.getTodoName());
             model.setCompleted(updatedTodoTask.getCompleted());
             model.setCreatedAt(LocalDateTime.now());
-            todoRepository.save(model);
-            return Optional.of(model);
+            return Optional.of(todoRepository.save(model));
         } else {
             logger.error("Failed to update todo with id {}", todoId);
             return Optional.empty();
