@@ -1,5 +1,5 @@
 # Todo Application
-#### This is a simple todo application developed using springboot with Thymeleaf templating engine. Persistence is implemented using MySQL database.
+#### This is a simple todo application developed using springboot and java. Persistence is implemented using MySQL database.
 
 #### This application has the following features
 * Creating Todo list
