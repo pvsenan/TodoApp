@@ -25,14 +25,14 @@ pipeline {
                 message "Deploy app. Please confirm ?"
              }
              steps {
-               //sh 'mkdir -p artifacts'
-               sh 'zip $APP_NAME.zip build/libs/TodoApp-0.0.1-SNAPSHOT.jar'
-               //sh 'mv build/libs/TodoApp-0.0.1-SNAPSHOT.jar artifacts/$APP_NAME.jar'
+               sh 'mkdir -p artifacts'
+               //sh 'zip $APP_NAME.zip build/libs/TodoApp-0.0.1-SNAPSHOT.jar'
+               sh 'mv build/libs/TodoApp-0.0.1-SNAPSHOT.jar artifacts/$APP_NAME.jar'
                //sh 'cd artifacts'
-               //dir("artifacts") {
+               dir("artifacts") {
                    sh 'eb init $APP_NAME  --region us-east-1'
                    sh 'eb deploy $APP_ENV --region us-east-1 --timeout 40'
-               //}
+               }
              }
          }
     }
