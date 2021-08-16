@@ -27,6 +27,7 @@ pipeline {
                sh 'mkdir -p artifacts'
                sh 'mv build/libs/TodoApp-0.0.1-SNAPSHOT.jar artifacts/$APP_NAME.jar'
                sh 'cd artifacts'
+               sh "ls -l"
                sh 'eb init $APP_NAME  --region us-east-1'
                sh 'eb deploy $APP_NAME --region eu-north-1 --timeout 40'
              }
