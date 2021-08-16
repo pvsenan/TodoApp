@@ -20,9 +20,9 @@ pipeline {
          }
 
         stage('Deploy') {
-            when {
-                   branch "main"
-              }
+            input {
+                message "Deploy app. Please confirm ?"
+             }
              steps {
                sh 'mkdir -p artifacts'
                sh 'mv build/libs/TodoApp-0.0.1-SNAPSHOT.jar artifacts/$APP_NAME.jar'
