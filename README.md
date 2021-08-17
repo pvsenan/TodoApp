@@ -40,7 +40,7 @@ spring.datasource.password=<password>
 ### Verifying after deployment
 Navigate to Elastic Beanstalk application from AWS console and copy the application link. You can access the swagger ui using the link
 to do CRUD operation against the application. The following is an example link to the swagger ui after deploying to AWS. Please not that this is
-an example link and replace it with your application url.
+an example link and replace `your_eb_url` with your application url.
 ````yaml
-http://todoapp-env.eba-2mb3ft9e.us-east-1.elasticbeanstalk.com/swagger-ui/index.html
+http://your_eb_url/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config
 ````
